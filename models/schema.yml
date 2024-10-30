@@ -145,3 +145,51 @@ models:
         tests:
           - unique:
               column_name: "(date_date || '_' || campaign_key)"
+      - name: int_campaigns_day
+        description: daily ads stats
+        columns:
+          - name: date_date
+            description: day
+            tests:
+              - unique
+              - not_null 
+          - name: ads_cost 
+            description: daily cost
+          - name: ads_impression
+            description: daily impressions
+          - name: ads_clicks
+            description: daily clicks
+      - name: finance_campaigns_day
+        description: all stats ads daily
+        columns:
+          - name: date_date
+            description: day
+            tests:
+              - unique
+              - not_null 
+          - name: ads_margin 
+            description: marge minus ads, purchase & ops cost
+          - name: average_basket
+            description: panier moyen
+          - name: operational_margin
+            description: marge minus purchase & ops cost
+          - name: ads_cost
+            description: ads cost
+          - name: ads_impression
+            description: nb impr
+          - name: ads_clicks
+            description: nb clicks
+          - name: quantity
+            description:  q
+          - name: revenue
+            description: revenue brut
+          - name: purchase_cost
+            description: cout achat
+          - name: margin
+            description: marge brute
+          - name: shipping_fee
+            description: fact livraison client
+          - name: logcost 
+            description: cout log
+          - name: ship_cost 
+            description: cout shipping
