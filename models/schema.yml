@@ -52,3 +52,96 @@ sources:
             description: coût logistique
           - name: ship_cost
             description: coût livraison
+      - name: adwords
+        identifier: raw_gz_adwords
+        description: détails campagne adwords
+        columns:
+          - name: date_date
+            description: date
+          - name: paid_source
+            description: source
+          - name: campaign_key
+            description: id de la campagne
+          - name: camPGN_name
+            description: nom campagne pub
+          - name: ads_cost
+            description: daily cost
+          - name: impression
+            description: nb impressions
+          - name: click
+            description: nb clicks
+      - name: bing
+        identifier: raw_gz_bing
+        description: détails campagne bing
+        columns:
+          - name: date_date
+            description: date
+          - name: paid_source
+            description: source
+          - name: campaign_key
+            description: id de la campagne
+          - name: camPGN_name
+            description: nom campagne pub
+          - name: ads_cost
+            description: daily cost
+          - name: impression
+            description: nb impressions
+          - name: click
+            description: nb clicks
+      - name: criteo
+        identifier: raw_gz_criteo
+        description: détails campagne criteo
+        columns:
+          - name: date_date
+            description: date
+          - name: paid_source
+            description: source
+          - name: campaign_key
+            description: id de la campagne
+          - name: camPGN_name
+            description: nom campagne pub
+          - name: ads_cost
+            description: daily cost
+          - name: impression
+            description: nb impressions
+          - name: click
+            description: nb clicks
+      - name: facebook
+        identifier: raw_gz_facebook
+        description: détails campagne facebook
+        columns:
+          - name: date_date
+            description: date
+          - name: paid_source
+            description: source
+          - name: campaign_key
+            description: id de la campagne
+          - name: camPGN_name
+            description: nom campagne pub
+          - name: ads_cost
+            description: daily cost
+          - name: impression
+            description: nb impressions
+          - name: click
+            description: nb clicks
+models:
+      - name: int_campaigns
+        description: all campaigns aggrégées 
+        columns:
+          - name: date_date
+            description: date
+          - name: paid_source
+            description: source
+          - name: campaign_key
+            description: id de la campagne
+          - name: camPGN_name
+            description: nom campagne pub
+          - name: ads_cost
+            description: daily cost
+          - name: impression
+            description: nb impressions
+          - name: click
+            description: nb clicks
+        tests:
+          - unique:
+              column_name: "(date_date || '_' || campaign_key)"
